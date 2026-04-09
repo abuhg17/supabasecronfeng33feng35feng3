@@ -1,23 +1,33 @@
-import { mkdir, readdir, rm, unlink, writeFile } from "node:fs/promises";
+import { mkdir, readdir, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const requiredEnv = ["SUPABASE_URL", "SUPABASE_ANON_KEY"];
-
-for (const name of requiredEnv) {
-  if (!process.env[name]) {
-    throw new Error(`Missing required environment variable: ${name}`);
-  }
+if (!process.env.SUPABASE_URL) {
+  throw new Error("Missing required environment variable: SUPABASE_URL");
 }
 
 const supabaseUrl = process.env.SUPABASE_URL.replace(/\/+$/, "");
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+const anonKey = process.env.SUPABASE_ANON_KEY || "";
+const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+const configuredTables = (process.env.SUPABASE_TABLES || "")
+  .split(",")
+  .map((value) => value.trim())
+  .filter(Boolean);
+
+const apiKey = serviceRoleKey || anonKey;
+
+if (!apiKey) {
+  throw new Error(
+    "Missing API key. Add SUPABASE_SERVICE_ROLE_KEY or SUPABASE_ANON_KEY in GitHub Secrets.",
+  );
+}
+
 const outputRoot = path.resolve("data");
 const manifestPath = path.resolve("data", "_manifest.json");
 const pageSize = 1000;
 
 const baseHeaders = {
-  apikey: supabaseAnonKey,
-  Authorization: `Bearer ${supabaseAnonKey}`,
+  apikey: apiKey,
+  Authorization: `Bearer ${apiKey}`,
 };
 
 function safeFileName(tableName) {
@@ -33,7 +43,7 @@ async function fetchJson(url, init = {}) {
   return response.json();
 }
 
-async function discoverTables() {
+async function discoverTablesWithServiceRole() {
   const spec = await fetchJson(`${supabaseUrl}/rest/v1/`, {
     headers: {
       ...baseHeaders,
@@ -52,6 +62,20 @@ async function discoverTables() {
   }
 
   return [...tables].sort((a, b) => a.localeCompare(b));
+}
+
+async function discoverTables() {
+  if (serviceRoleKey) {
+    return discoverTablesWithServiceRole();
+  }
+
+  if (configuredTables.length > 0) {
+    return configuredTables;
+  }
+
+  throw new Error(
+    "Exporting all tables requires SUPABASE_SERVICE_ROLE_KEY. If you only want specific tables, set SUPABASE_TABLES (comma-separated) in GitHub Secrets.",
+  );
 }
 
 async function fetchTableRows(tableName) {
@@ -138,6 +162,7 @@ async function main() {
   const manifest = {
     synced_at: new Date().toISOString(),
     table_count: tables.length,
+    discovery_mode: serviceRoleKey ? "service_role_auto_discovery" : "configured_table_list",
     tables: [],
   };
 
@@ -148,10 +173,7 @@ async function main() {
     const fileName = safeFileName(tableName);
     expectedFiles.add(fileName);
 
-    await writeFile(
-      path.join(outputRoot, fileName),
-      `${JSON.stringify(rows, null, 2)}\n`,
-    );
+    await writeFile(path.join(outputRoot, fileName), `${JSON.stringify(rows, null, 2)}\n`);
 
     manifest.tables.push({
       table: tableName,
