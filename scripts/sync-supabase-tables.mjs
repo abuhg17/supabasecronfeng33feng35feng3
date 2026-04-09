@@ -24,6 +24,13 @@ if (!apiKey) {
 const outputRoot = path.resolve("data");
 const manifestPath = path.resolve("data", "_manifest.json");
 const pageSize = 1000;
+const redactedSecret = "[REDACTED SECRET]";
+const secretFieldPattern = /(api[-_ ]?key|secret|token|password|passwd|authorization|bearer)/i;
+const secretValuePatterns = [
+  /\bsk-[A-Za-z0-9_-]{20,}\b/g,
+  /\bsk-kimi-[A-Za-z0-9_-]{20,}\b/g,
+  /\b(?:Bearer\s+)?eyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9._-]+\.[A-Za-z0-9._-]+\b/g,
+];
 
 const baseHeaders = {
   apikey: apiKey,
@@ -32,6 +39,39 @@ const baseHeaders = {
 
 function safeFileName(tableName) {
   return `${tableName.replace(/[^a-zA-Z0-9._-]/g, "_")}.json`;
+}
+
+function sanitizeString(value, keyName = "") {
+  if (secretFieldPattern.test(keyName) && value.trim().length > 0) {
+    return redactedSecret;
+  }
+
+  let sanitized = value;
+  for (const pattern of secretValuePatterns) {
+    sanitized = sanitized.replace(pattern, redactedSecret);
+  }
+  return sanitized;
+}
+
+function sanitizeValue(value, keyName = "") {
+  if (typeof value === "string") {
+    return sanitizeString(value, keyName);
+  }
+
+  if (Array.isArray(value)) {
+    return value.map((item) => sanitizeValue(item));
+  }
+
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).map(([childKey, childValue]) => [
+        childKey,
+        sanitizeValue(childValue, childKey),
+      ]),
+    );
+  }
+
+  return value;
 }
 
 async function fetchJson(url, init = {}) {
@@ -170,10 +210,11 @@ async function main() {
 
   for (const tableName of tables) {
     const rows = await fetchTableRows(tableName);
+    const sanitizedRows = sanitizeValue(rows);
     const fileName = safeFileName(tableName);
     expectedFiles.add(fileName);
 
-    await writeFile(path.join(outputRoot, fileName), `${JSON.stringify(rows, null, 2)}\n`);
+    await writeFile(path.join(outputRoot, fileName), `${JSON.stringify(sanitizedRows, null, 2)}\n`);
 
     manifest.tables.push({
       table: tableName,

@@ -10,6 +10,7 @@ This repository syncs Supabase table data into GitHub as JSON on a schedule.
 - Falls back to a configured table list when only an anon key is available
 - Downloads all rows from each accessible table
 - Stores the exported files under `data/*.json`
+- Redacts secret-like values before writing exported JSON files
 - Writes a manifest file to `data/_manifest.json`
 - Commits and pushes changes back to this repository automatically
 
