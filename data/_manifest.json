@@ -1,11 +1,11 @@
 {
-  "synced_at": "2026-04-09T11:27:14.273Z",
+  "synced_at": "2026-04-10T05:15:27.035Z",
   "table_count": 11,
   "discovery_mode": "service_role_auto_discovery",
   "tables": [
     {
       "table": "article",
-      "row_count": 26,
+      "row_count": 19,
       "file": "article.json"
     },
     {
@@ -15,22 +15,22 @@
     },
     {
       "table": "commonaccount",
-      "row_count": 145,
+      "row_count": 23,
       "file": "commonaccount.json"
     },
     {
       "table": "commondocument",
-      "row_count": 14,
+      "row_count": 0,
       "file": "commondocument.json"
     },
     {
       "table": "food",
-      "row_count": 12,
+      "row_count": 13,
       "file": "food.json"
     },
     {
       "table": "image",
-      "row_count": 1,
+      "row_count": 0,
       "file": "image.json"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "table": "podcast",
-      "row_count": 2,
+      "row_count": 0,
       "file": "podcast.json"
     },
     {
@@ -50,12 +50,12 @@
     },
     {
       "table": "subscription",
-      "row_count": 30,
+      "row_count": 26,
       "file": "subscription.json"
     },
     {
       "table": "video",
-      "row_count": 3,
+      "row_count": 0,
       "file": "video.json"
     }
   ]
