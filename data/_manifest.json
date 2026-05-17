@@ -1,21 +1,21 @@
 {
-  "synced_at": "2026-05-17T15:51:56.520Z",
+  "synced_at": "2026-05-17T16:47:39.606Z",
   "table_count": 11,
   "discovery_mode": "service_role_auto_discovery",
   "tables": [
     {
       "table": "article",
-      "row_count": 19,
+      "row_count": 158,
       "file": "article.json"
     },
     {
       "table": "bank",
-      "row_count": 9,
+      "row_count": 22,
       "file": "bank.json"
     },
     {
       "table": "commonaccount",
-      "row_count": 23,
+      "row_count": 175,
       "file": "commonaccount.json"
     },
     {
@@ -25,7 +25,7 @@
     },
     {
       "table": "food",
-      "row_count": 13,
+      "row_count": 29,
       "file": "food.json"
     },
     {
@@ -45,12 +45,12 @@
     },
     {
       "table": "routine",
-      "row_count": 2,
+      "row_count": 27,
       "file": "routine.json"
     },
     {
       "table": "subscription",
-      "row_count": 84,
+      "row_count": 116,
       "file": "subscription.json"
     },
     {
