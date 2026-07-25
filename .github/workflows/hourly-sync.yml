@@ -5,7 +5,9 @@ on:
   repository_dispatch:
     types: [external-sync]
   schedule:
+    # Primary hourly sync (GitHub cron is UTC; may drift a few minutes)
     - cron: "37 * * * *"
+    # Secondary slot as backup if the first run is skipped/delayed
     - cron: "57 * * * *"
 
 permissions:
@@ -18,25 +20,38 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Show trigger source
-        run: echo "Triggered by ${{ github.event_name }}"
+        run: |
+          echo "event=${{ github.event_name }}"
+          echo "ref=${{ github.ref }}"
+          echo "sha=${{ github.sha }}"
+          echo "run_id=${{ github.run_id }}"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Sync Supabase tables as JSON
+      - name: Toggle routine (odd insert / even delete) + sync JSON
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           SUPABASE_TABLES: ${{ secrets.SUPABASE_TABLES }}
+          # Optional tunables (defaults are fine for most projects)
+          SYNC_CONCURRENCY: "4"
+          SYNC_PAGE_SIZE: "1000"
+          SYNC_MAX_RETRIES: "3"
+          # Odd Taipei hour → INSERT marker routine; even hour → DELETE those markers
+          ROUTINE_TOGGLE: "1"
+          ROUTINE_TZ: "Asia/Taipei"
+          ROUTINE_TABLE: "routine"
         run: node scripts/sync-supabase-tables.mjs
 
       - name: Commit changes
@@ -48,5 +63,5 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "chore: sync supabase tables"
+          git commit -m "chore: sync supabase tables ($(date -u +%Y-%m-%dT%H:%MZ))"
           git push
