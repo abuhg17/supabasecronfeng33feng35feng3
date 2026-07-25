@@ -15,21 +15,6 @@
     "updated_at": "2026-04-10T06:01:44.616938+00:00"
   },
   {
-    "id": 71,
-    "name": "最瞎結婚理由",
-    "file": "https://gbavelefijoasvbgnojn.supabase.co/storage/v1/object/public/feng33feng35feng3/music/1775800855715_034_Pekora.mp3",
-    "filetype": "mp3",
-    "lyrics": null,
-    "note": null,
-    "ref": null,
-    "category": null,
-    "hash": "fc93a44cc03b20b613629afb69b16d358ddbcb74b75881fc595bef3479c040d2",
-    "language": "Pekora",
-    "cover": null,
-    "created_at": "2026-04-10T06:01:44.616938+00:00",
-    "updated_at": "2026-04-10T06:01:44.616938+00:00"
-  },
-  {
     "id": 39,
     "name": "鋒塗力百年夢",
     "file": "https://gbavelefijoasvbgnojn.supabase.co/storage/v1/object/public/feng33feng35feng3/music/1775800786603_002_.mp3",
@@ -100,21 +85,6 @@
     "category": null,
     "hash": "inline_create_1775762937325",
     "language": "韓語",
-    "cover": null,
-    "created_at": "2026-04-10T06:01:44.616938+00:00",
-    "updated_at": "2026-04-10T06:01:44.616938+00:00"
-  },
-  {
-    "id": 83,
-    "name": "鋒兄的傳奇人生",
-    "file": "https://gbavelefijoasvbgnojn.supabase.co/storage/v1/object/public/feng33feng35feng3/music/1775800877743_046_.mp3",
-    "filetype": "mp3",
-    "lyrics": "鋒兄の伝説的人生\n最初の賞からトップへ\nトップから大統領へ\n37歳\n統一インボイス特別賞受賞者\nパワーボール一等賞受賞者\nロト一等賞受賞者\n高試三級情報処理トップ\n報到を辞退\n鋒兄 塗哥広報情報\n起業\n51歳\n台北市情報局長\n52歳\n台北市副秘書長\n53歳\n台北市副市長\n54歳\n台北市長候補\n億万市長\n鋒兄 大儲け\n幸運の台北\n63歳\n大統領候補\n兆万大統領\n鋒兄 大儲け\n幸運の台湾\n鋒兄の伝説的人生\n最初の賞からトップへ\nトップから大統領へ\n",
-    "note": null,
-    "ref": null,
-    "category": null,
-    "hash": "ed1e37009a537158d031949a3490e572d35a45655eb39ed5ab352dba269a5d1d",
-    "language": "日語",
     "cover": null,
     "created_at": "2026-04-10T06:01:44.616938+00:00",
     "updated_at": "2026-04-10T06:01:44.616938+00:00"
@@ -525,6 +495,21 @@
     "updated_at": "2026-04-10T06:01:44.616938+00:00"
   },
   {
+    "id": 71,
+    "name": "最瞎結婚理由",
+    "file": "https://gbavelefijoasvbgnojn.supabase.co/storage/v1/object/public/feng33feng35feng3/music/1775800855715_034_Pekora.mp3",
+    "filetype": "mp3",
+    "lyrics": null,
+    "note": null,
+    "ref": null,
+    "category": null,
+    "hash": "fc93a44cc03b20b613629afb69b16d358ddbcb74b75881fc595bef3479c040d2",
+    "language": "Pekora",
+    "cover": null,
+    "created_at": "2026-04-10T06:01:44.616938+00:00",
+    "updated_at": "2026-04-10T06:01:44.616938+00:00"
+  },
+  {
     "id": 72,
     "name": "喵布布本喵掉的毛",
     "file": "https://gbavelefijoasvbgnojn.supabase.co/storage/v1/object/public/feng33feng35feng3/music/1775800856983_035_.mp3",
@@ -685,6 +670,21 @@
     "category": null,
     "hash": "252d047f214fa8b19644f58dd89ef22cac8e2576cb46d0d947d06be67de6a90d",
     "language": "Pekora",
+    "cover": null,
+    "created_at": "2026-04-10T06:01:44.616938+00:00",
+    "updated_at": "2026-04-10T06:01:44.616938+00:00"
+  },
+  {
+    "id": 83,
+    "name": "鋒兄的傳奇人生",
+    "file": "https://gbavelefijoasvbgnojn.supabase.co/storage/v1/object/public/feng33feng35feng3/music/1775800877743_046_.mp3",
+    "filetype": "mp3",
+    "lyrics": "鋒兄の伝説的人生\n最初の賞からトップへ\nトップから大統領へ\n37歳\n統一インボイス特別賞受賞者\nパワーボール一等賞受賞者\nロト一等賞受賞者\n高試三級情報処理トップ\n報到を辞退\n鋒兄 塗哥広報情報\n起業\n51歳\n台北市情報局長\n52歳\n台北市副秘書長\n53歳\n台北市副市長\n54歳\n台北市長候補\n億万市長\n鋒兄 大儲け\n幸運の台北\n63歳\n大統領候補\n兆万大統領\n鋒兄 大儲け\n幸運の台湾\n鋒兄の伝説的人生\n最初の賞からトップへ\nトップから大統領へ\n",
+    "note": null,
+    "ref": null,
+    "category": null,
+    "hash": "ed1e37009a537158d031949a3490e572d35a45655eb39ed5ab352dba269a5d1d",
+    "language": "日語",
     "cover": null,
     "created_at": "2026-04-10T06:01:44.616938+00:00",
     "updated_at": "2026-04-10T06:01:44.616938+00:00"
