@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-07-29T08:06:43.012Z",
+  "synced_at": "2026-07-29T08:23:30.513Z",
   "table_count": 11,
   "total_rows": 591,
   "discovery_mode": "service_role_auto_discovery",
@@ -10,10 +10,8 @@
     "timezone": "Asia/Taipei",
     "hour": 16,
     "table": "routine",
-    "deleted_count": 1,
-    "deleted_ids": [
-      72
-    ]
+    "deleted_count": 0,
+    "deleted_ids": []
   },
   "tables": [
     {
