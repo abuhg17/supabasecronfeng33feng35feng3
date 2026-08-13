@@ -334,5 +334,17 @@
     "photo": null,
     "created_at": "2026-08-13T23:20:08.262942+00:00",
     "updated_at": "2026-08-13T23:20:08.262942+00:00"
+  },
+  {
+    "id": 314,
+    "name": "[cron] odd-hour",
+    "note": "GH_CRON_ROUTINE 2026-08-14 07:32:22",
+    "lastdate1": null,
+    "lastdate2": null,
+    "lastdate3": null,
+    "link": null,
+    "photo": null,
+    "created_at": "2026-08-13T23:32:23.618494+00:00",
+    "updated_at": "2026-08-13T23:32:23.618494+00:00"
   }
 ]
