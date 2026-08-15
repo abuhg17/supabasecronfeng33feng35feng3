@@ -322,41 +322,5 @@
     "photo": null,
     "created_at": "2026-05-17T16:06:20.327406+00:00",
     "updated_at": "2026-05-17T16:06:20.327406+00:00"
-  },
-  {
-    "id": 345,
-    "name": "[cron] odd-hour",
-    "note": "GH_CRON_ROUTINE 2026-08-15 21:08:58",
-    "lastdate1": null,
-    "lastdate2": null,
-    "lastdate3": null,
-    "link": null,
-    "photo": null,
-    "created_at": "2026-08-15T13:08:59.661927+00:00",
-    "updated_at": "2026-08-15T13:08:59.661927+00:00"
-  },
-  {
-    "id": 346,
-    "name": "[cron] odd-hour",
-    "note": "GH_CRON_ROUTINE 2026-08-15 21:23:16",
-    "lastdate1": null,
-    "lastdate2": null,
-    "lastdate3": null,
-    "link": null,
-    "photo": null,
-    "created_at": "2026-08-15T13:23:17.528644+00:00",
-    "updated_at": "2026-08-15T13:23:17.528644+00:00"
-  },
-  {
-    "id": 347,
-    "name": "[cron] odd-hour",
-    "note": "GH_CRON_ROUTINE 2026-08-15 21:53:41",
-    "lastdate1": null,
-    "lastdate2": null,
-    "lastdate3": null,
-    "link": null,
-    "photo": null,
-    "created_at": "2026-08-15T13:53:42.599276+00:00",
-    "updated_at": "2026-08-15T13:53:42.599276+00:00"
   }
 ]
