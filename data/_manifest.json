@@ -1,7 +1,7 @@
 {
-  "synced_at": "2026-08-17T06:01:51.240Z",
+  "synced_at": "2026-08-17T06:35:31.633Z",
   "table_count": 11,
-  "total_rows": 591,
+  "total_rows": 433,
   "discovery_mode": "service_role_auto_discovery",
   "concurrency": 4,
   "routine_toggle": {
@@ -10,16 +10,13 @@
     "timezone": "Asia/Taipei",
     "hour": 14,
     "table": "routine",
-    "deleted_count": 2,
-    "deleted_ids": [
-      385,
-      386
-    ]
+    "deleted_count": 0,
+    "deleted_ids": []
   },
   "tables": [
     {
       "table": "article",
-      "row_count": 158,
+      "row_count": 0,
       "file": "article.json"
     },
     {
