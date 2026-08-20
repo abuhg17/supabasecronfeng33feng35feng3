@@ -1,7 +1,7 @@
 {
-  "synced_at": "2026-08-20T13:28:35.623Z",
+  "synced_at": "2026-08-20T13:38:43.601Z",
   "table_count": 11,
-  "total_rows": 592,
+  "total_rows": 593,
   "discovery_mode": "service_role_auto_discovery",
   "concurrency": 4,
   "routine_toggle": {
@@ -10,9 +10,9 @@
     "timezone": "Asia/Taipei",
     "hour": 21,
     "table": "routine",
-    "id": 468,
+    "id": 469,
     "name": "[cron] odd-hour",
-    "note": "GH_CRON_ROUTINE 2026-08-20 21:28:30"
+    "note": "GH_CRON_ROUTINE 2026-08-20 21:38:38"
   },
   "tables": [
     {
@@ -57,7 +57,7 @@
     },
     {
       "table": "routine",
-      "row_count": 28,
+      "row_count": 29,
       "file": "routine.json"
     },
     {
