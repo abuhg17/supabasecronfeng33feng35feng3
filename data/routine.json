@@ -322,53 +322,5 @@
     "photo": null,
     "created_at": "2026-05-17T16:06:20.327406+00:00",
     "updated_at": "2026-05-17T16:06:20.327406+00:00"
-  },
-  {
-    "id": 732,
-    "name": "[cron] odd-hour",
-    "note": "GH_CRON_ROUTINE 2026-09-16 19:59:24",
-    "lastdate1": null,
-    "lastdate2": null,
-    "lastdate3": null,
-    "link": null,
-    "photo": null,
-    "created_at": "2026-09-16T11:59:25.239273+00:00",
-    "updated_at": "2026-09-16T11:59:25.239273+00:00"
-  },
-  {
-    "id": 733,
-    "name": "[cron] odd-hour",
-    "note": "GH_CRON_ROUTINE 2026-09-16 23:13:02",
-    "lastdate1": null,
-    "lastdate2": null,
-    "lastdate3": null,
-    "link": null,
-    "photo": null,
-    "created_at": "2026-09-16T15:13:03.571768+00:00",
-    "updated_at": "2026-09-16T15:13:03.571768+00:00"
-  },
-  {
-    "id": 734,
-    "name": "[cron] odd-hour",
-    "note": "GH_CRON_ROUTINE 2026-09-17 01:14:07",
-    "lastdate1": null,
-    "lastdate2": null,
-    "lastdate3": null,
-    "link": null,
-    "photo": null,
-    "created_at": "2026-09-16T17:14:09.029708+00:00",
-    "updated_at": "2026-09-16T17:14:09.029708+00:00"
-  },
-  {
-    "id": 735,
-    "name": "[cron] odd-hour",
-    "note": "GH_CRON_ROUTINE 2026-09-17 03:13:38",
-    "lastdate1": null,
-    "lastdate2": null,
-    "lastdate3": null,
-    "link": null,
-    "photo": null,
-    "created_at": "2026-09-16T19:13:39.381485+00:00",
-    "updated_at": "2026-09-16T19:13:39.381485+00:00"
   }
 ]
